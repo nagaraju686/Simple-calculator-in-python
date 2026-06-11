@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        color: red;
+    }
+</style>
+<body>
+    <input type="text" id="name" placeholder="name">
+    <input type="text" id="age" placeholder="age">
+    <button onclick="add()">add</button> <br>
+    <a href="data.html">new link</a>
+    <script>
+        let human=[]
+function add(){
+    let nameInput=document.getElementById('name').value
+    let ageInput=document.getElementById('age').value
+    let data={
+        name:nameInput,
+        age:ageInput
+    };
+    human.push(data);
+    console.log(localStorage.setItem("human",JSON.stringify(human)));
+    nameInput.value="";
+    ageInput.value="";
+}
+
+    </script>
+</body>
+</html>
